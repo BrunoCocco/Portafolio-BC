@@ -1,19 +1,15 @@
-import {} from 'react'
-import Header from './component/Header'
-import Portafolio from './component/Portafolio'
-import Footer from './component/Footer'
-import './App.css'
+import Header from './component/Header.jsx'
+import Portafolio from './component/Portafolio.jsx'
+import Footer from './component/Footer.jsx'
 
 function App() {
-
   return (
     <>
-    <Header />
+    <Header/>
 
-    <Portafolio />
+    <Portafolio/>
     
-    <Footer />
-
+    <Footer/>
     </>
   )
 }
