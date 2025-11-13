@@ -6,7 +6,7 @@ function Portafolio() {
           className="mt-1 header-img-fantasma"
           src="../src/assets/fantasma.png"
           alt="Fantasmita"/>
-
+        <div></div>
       </div>
     </>
   );
