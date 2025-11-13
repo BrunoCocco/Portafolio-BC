@@ -1,11 +1,15 @@
-
-
-function Portafolio( {colorTexto}) {
+function Portafolio() {
   return (
-    <div className="mt-5">
-      <h2 className="text-center" style={{ color: colorTexto }}>Mi Portafolio me trasnsformo</h2>
-    </div>
-  )
+    <>
+      <div className="col-10 p-4 position-relative">
+        <img
+          className="mt-1 header-img-fantasma"
+          src="../src/assets/fantasma.png"
+          alt="Fantasmita"/>
+
+      </div>
+    </>
+  );
 }
 
-export default Portafolio
+export default Portafolio;

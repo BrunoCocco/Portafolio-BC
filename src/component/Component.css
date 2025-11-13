@@ -10,7 +10,7 @@
   height: 40px;
   object-fit: cover;
   position: relative;
-  animation: mover 3s linear infinite alternate;
+  animation: mover 5s linear infinite alternate;
 }
 
 @keyframes mover {
@@ -18,6 +18,12 @@
     left: 0;
   }
   to {
-    left: calc(100vw - 40px);
+    left: calc(100vw - 40px - 200px);
   }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
 }
