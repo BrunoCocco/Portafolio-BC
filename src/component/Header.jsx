@@ -35,8 +35,9 @@ function Header({ setVista }) {
 
         {/* === PROYECTOS – AÚN NO DISPONIBLE === */}
         <button
+        onClick={() => setVista("Proyectos")}
+
           className="nav-btn nav-disabled"
-          disabled
         >
           <img src={proyecto} alt="Icono proyectos" className="btn-icon" />
           Proyectos
