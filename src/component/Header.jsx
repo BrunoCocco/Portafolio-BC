@@ -3,30 +3,24 @@ import "./Component.css";
 function Header() {
   return (
     <>
-      <div className="col-2 bg-dark text-white p-3">
-        <ul className="nav flex-column">
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-              Inicio
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-              skills
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-              proyectos
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">
-              confesiones
-            </a>
-          </li>
-        </ul>
-      </div>
+      <section className="container-fluid">
+        <article className="header-Fondo p-3">
+              <div class="row justify-content-between text-center">
+                <div class="col-3">
+                  <button>Inicio</button>
+                </div>
+                <div class="col-3">
+                  <button>Skills</button>
+                </div>
+                <div class="col-3">
+                  <button>Proyectos</button>
+                </div>
+                <div class="col-3">
+                  <button>Confesiones</button>
+                </div>
+              </div>
+        </article>
+      </section>
     </>
   );
 }
