@@ -1,27 +1,49 @@
-import "./Component.css";
+// src/component/Header.jsx
+// =============================================
+// 🧭 Header de navegación principal
+// - Fijo arriba
+// - Botones con ícono + texto
+// - Cambia la sección central de la App
+// =============================================
 
-function Header({setVista}) {
+import fantasma from "../assets/fantasma.png";
+import hombre from "../assets/hombre.png";
+import proyecto from "../assets/proyecto.png";
+
+function Header({ setVista }) {
   return (
-    <>
-      <section className="Fondo-azul container">
-        <article>
-          <div class="row mt-5 justify-content-between text-center">
-            <div class="col-3">
-              <button onClick={()=>{setVista("Bruno")}}>Inicio</button>
-            </div>
-            <div class="col-3">
-              <button onClick={()=>{setVista("Skills")}}>Skills</button>
-            </div>
-            <div class="col-3">
-              <button>Proyectos</button>
-            </div>
-            <div class="col-3">
-              <button>Confesiones</button>
-            </div>
-          </div>
-        </article>
-      </section>
-    </>
+    <header className="crypto-header">
+      <nav className="nav-container">
+
+        {/* === SOBRE MÍ === */}
+        <button
+          className="nav-btn"
+          onClick={() => setVista("Bruno")}
+        >
+          <img src={fantasma} alt="Icono sobre mí" className="btn-icon" />
+          Sobre mí
+        </button>
+
+        {/* === SKILLS === */}
+        <button
+          className="nav-btn"
+          onClick={() => setVista("Skills")}
+        >
+          <img src={hombre} alt="Icono skills" className="btn-icon" />
+          Skills
+        </button>
+
+        {/* === PROYECTOS – AÚN NO DISPONIBLE === */}
+        <button
+          className="nav-btn nav-disabled"
+          disabled
+        >
+          <img src={proyecto} alt="Icono proyectos" className="btn-icon" />
+          Proyectos
+        </button>
+
+      </nav>
+    </header>
   );
 }
 

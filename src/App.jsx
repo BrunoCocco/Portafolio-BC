@@ -1,25 +1,39 @@
+// src/App.jsx
+// =============================================
+// 🌐 App Root
+// - Define el layout principal de la aplicación
+// - Header fijo arriba, Footer fijo abajo
+// - Contenido central dinámico según "vista"
+// =============================================
+
 import { useState } from "react";
-//Componentes Header
+
+// 🔹 COMPONENTES
 import Header from "./component/Header.jsx";
-// Footer 
-import Footer from "./component/Footer.jsx"
-//Vistas alojadas en layout{}
-import Bruno from "./layouts/VistaBruno.jsx";
-import Skills from "./layouts/VistaSkills.jsx";
-// Css
+import Bruno from "./layouts/VistaBruno.jsx";   // 👈 FIX
+import Skills from "./layouts/VistaSkills.jsx"; // 👈 FIX
+import Footer from "./component/Footer.jsx";
+
+// Css 
 import "./App.css"
-//Import de bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [vista, setVista] = useState("");
+  const [vista, setVista] = useState("Bruno");
+
+  function renderVista() {
+    switch (vista) {
+      case "Skills":
+        return <Skills />;
+      case "Bruno":
+      default:
+        return <Bruno />;
+    }
+  }
+
   return (
     <>
       <Header setVista={setVista} />
-
-      {vista === "Bruno" && <Bruno />}
-      {vista === "Skills" && <Skills />}
-
+      <main className="app-main">{renderVista()}</main>
       <Footer />
     </>
   );
