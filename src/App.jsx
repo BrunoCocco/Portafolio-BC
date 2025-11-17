@@ -1,18 +1,26 @@
+import { useState } from "react";
+//Componentes Header
 import Header from "./component/Header.jsx";
-import Portafolio from "./component/Portafolio.jsx";
-
+// Footer 
+import Footer from "./component/Footer.jsx"
+//Vistas alojadas en layout{}
+import Bruno from "./layouts/VistaBruno.jsx";
+import Skills from "./layouts/VistaSkills.jsx";
+// Css
+import "./App.css"
+//Import de bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [vista, setVista] = useState("");
   return (
     <>
-   <div className="container-fluid">
-      <div className="row vh-100">
+      <Header setVista={setVista} />
 
-        <Header />       {/* col-2 */}
-        <Portafolio />   {/* col-10 */}
+      {vista === "Bruno" && <Bruno />}
+      {vista === "Skills" && <Skills />}
 
-      </div>
-    </div>
+      <Footer />
     </>
   );
 }
