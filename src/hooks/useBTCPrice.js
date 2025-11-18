@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-function useBTCPrice() {
+ function useCryptoPrice(symbol = "BTC") {
   const [precio, setPrecio] = useState(null);
 
-  async function fetchPrecio() {
+  const fetchPrecio = useCallback(async () => {
     try {
       const res = await fetch(
-        "https://api.coinbase.com/v2/prices/BTC-USD/spot"
+        `https://api.coinbase.com/v2/prices/${symbol}-USD/spot`
       );
       const data = await res.json();
       setPrecio(Number(data.data.amount).toLocaleString("en-US"));
     } catch (error) {
-      console.error("❌ Error obteniendo BTC:", error);
+      console.error(`❌ Error obteniendo precio de ${symbol}:`, error);
     }
-  }
+  }, [symbol]);
 
   useEffect(() => {
     fetchPrecio();
-    const intervalo = setInterval(fetchPrecio, 20000); // cada 20s
-    return () => clearInterval(intervalo);
-  }, []);
+    const interval = setInterval(fetchPrecio, 20000);
+    return () => clearInterval(interval);
+  }, [fetchPrecio]);
 
   return precio;
 }
-export default useBTCPrice;
+export default useCryptoPrice;

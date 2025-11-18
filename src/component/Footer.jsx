@@ -1,31 +1,15 @@
-// =============================================
-// 🟠 Footer con precio BTC Live
-// =============================================
-import useBTCPrice from "../hooks/useBTCPrice.js";
+import useCryptoPrice from "../hooks/useBTCPrice";
 
 function Footer() {
-  const btc = useBTCPrice();
+  const btc = useCryptoPrice("BTC");
+  const xrp = useCryptoPrice("XRP");
 
   return (
     <footer className="footer-crypto">
       <div className="footer-inner">
-        <h4 className="footer-title">Contacto</h4>
-
-        <p className="footer-item">
-          Email:{" "}
-          <a href="mailto:brunococco.dev@gmail.com">brunococco.dev@gmail.com</a>
-        </p>
-
-        <p className="footer-item">
-          GitHub:
-          <a href="https://github.com/BrunoCocco" target="_blank">
-            github.com/BrunoCocco
-          </a>
-        </p>
-
-        <p className="footer-item">
-          🟡 BTC Price: {btc ? `$${btc}` : "Cargando..."}
-        </p>
+        <h4 className="footer-title">Cotizaciones</h4>
+        <p className="footer-item"> BTC: {btc ? `$${btc}` : "Cargando..."}</p>
+        <p className="footer-item"> XRP: {xrp ? `$${xrp}` : "Cargando..."}</p>
       </div>
     </footer>
   );
